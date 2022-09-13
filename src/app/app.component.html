@@ -1,19 +1,33 @@
-<h1>Hello World</h1>
-
-
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th>cualquiercosa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let coin of coins">
-      <td>
-        <img [src]="coin.image" alt="{{coin.name}}">
-        <span>{{coin.name}}</span>
-        <span>{{coin.symbol}}</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h1>Hello World</h1>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th *ngFor="let title of titles">
+          {{title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coin of coins; let i = index">
+        <td>
+          {{ i + 1}}
+        </td>
+        <td>
+          <img [src]="coin.image" alt="{{coin.name}}" style="width: 2rem; margin-right: 10px;">
+          <span>{{coin.name}}</span>
+          <span>{{coin.symbol}}</span>
+        </td>
+        <td>
+          {{coin.current_price.toLocaleString()}}
+        </td>
+        <td>
+          {{coin.price_change_percentage_24h.toLocaleString()}}
+        </td>
+        <td>
+          {{coin.total_volume.toLocaleString()}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
