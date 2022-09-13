@@ -1,0 +1,19 @@
+<h1>Hello World</h1>
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th>cualquiercosa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coin of coins">
+      <td>
+        <img [src]="coin.image" alt="{{coin.name}}">
+        <span>{{coin.name}}</span>
+        <span>{{coin.symbol}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
